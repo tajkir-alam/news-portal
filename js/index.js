@@ -8,17 +8,30 @@ const loadNavSection = async() => {
 
 const displayNavSection = (datas) => {
     const navSection = document.getElementById('nav-section');
-    // console.log(datas)
+    // console.log(datas.news_category)
     datas.news_category.forEach(data => {
-        console.log(data.category_name);
-        const a = document.createElement('a');
-        a.href = "";
-        a.classList.add('nav-item')
-        a.innerText = data.category_name;
-        navSection.appendChild(a);
+        // console.log(data.category_id);
+        const li = document.createElement('li');
+        li.classList.add('nav-item')
+        li.innerHTML = `
+            <a  onclick="categoryNews('${data.category_id}')" class="nav-link"> ${data.category_name} </a>
+        `
+        navSection.appendChild(li);
     });
 }
 
+const categoryNews = async(category_id) => {
+    const URL = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
+    const res = await fetch(URL);
+    const data = await res.json();
+    displayCategoryNews(data.data);
+}
 
+const displayCategoryNews = (category_id) => {
+    // console.log(category_id);
+    category_id.forEach(singleCategory => {
+        console.log(singleCategory);
+    })
+}
 
 loadNavSection();
