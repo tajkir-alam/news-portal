@@ -13,6 +13,7 @@ const displayNavSection = (datas) => {
         console.log(data.category_name);
         const a = document.createElement('a');
         a.href = "";
+        a.classList.add('nav-item')
         a.innerText = data.category_name;
         navSection.appendChild(a);
     });
