@@ -1,0 +1,22 @@
+.horizontal-line{
+    max-width: 90%;
+    margin: 0 auto;
+    border-bottom: none;
+    color: rgba(31, 28, 28, 0.712);
+}
+
+.user-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: rgba(85, 80, 74, 0.781);
+    transition: .2s;
+}
+a:hover{
+    color: blue;
+    border-bottom: 1px solid blue;
+}
