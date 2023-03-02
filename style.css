@@ -19,6 +19,7 @@ a{
     text-decoration: none;
     color: rgba(85, 80, 74, 0.781);
     transition: .2s;
+    cursor: pointer;
 }
 a:hover{
     color: blue;
